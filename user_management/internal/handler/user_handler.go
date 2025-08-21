@@ -3,8 +3,10 @@ package handler
 import (
 	"net/http"
 
+	"enterdev.com.vn/user_management/internal/dto"
 	"enterdev.com.vn/user_management/internal/models"
 	"enterdev.com.vn/user_management/internal/services"
+	"enterdev.com.vn/user_management/internal/utils"
 	"enterdev.com.vn/user_management/internal/validation"
 	"github.com/gin-gonic/gin"
 )
@@ -27,8 +29,17 @@ func (uh *UserHandler) CreateUser(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
 		ctx.JSON(http.StatusBadRequest, validation.HandlerValidationError(err))
+		return
 	}
-	uh.service.CreateUser(user)
+	createdUser, err := uh.service.CreateUser(user)
+	if err != nil {
+		utils.ResponseError(ctx, err)
+		return
+	}
+
+	userDTO := dto.MapUserToDTO(createdUser)
+
+	utils.ResponseSuccess(ctx, http.StatusCreated, &userDTO)
 }
 
 func (uh *UserHandler) GetUserByUUID(ctx *gin.Context) {

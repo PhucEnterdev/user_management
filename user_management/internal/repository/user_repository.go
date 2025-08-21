@@ -22,8 +22,9 @@ func (ur *InMemoryUserRepositoryImpl) FindAll() {
 	log.Println("GetAllUser into InMemoryUserRepository")
 }
 
-func (ur *InMemoryUserRepositoryImpl) Create() {
-
+func (ur *InMemoryUserRepositoryImpl) Create(user models.User) error {
+	ur.users = append(ur.users, user)
+	return nil
 }
 
 func (ur *InMemoryUserRepositoryImpl) FindByUUID() {

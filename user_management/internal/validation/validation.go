@@ -61,6 +61,10 @@ func HandlerValidationError(err error) gin.H {
 				errors[e.Field()] = fmt.Sprintf("%s không hợp lệ", e.Field())
 			case "datetime":
 				errors[e.Field()] = fmt.Sprintf("%s phải theo định dạng dd-mm-yyyy", e.Field())
+			case "email_advanced":
+				errors[e.Field()] = fmt.Sprintf("%s này nằm trong danh sách bị cấm", e.Field())
+			case "password_strong":
+				errors[e.Field()] = fmt.Sprintf("%s này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)", e.Field())
 			case "file_extension":
 				allowedValues := strings.Join(strings.Split(e.Param(), " "), ", ")
 				errors[e.Field()] = fmt.Sprintf("%s chỉ cho phép những đuôi file %s", e.Field(), allowedValues)

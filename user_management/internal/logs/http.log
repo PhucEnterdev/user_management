@@ -1,7 +1,810 @@
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:61583","request_uri":"/api/v1/users","content_length":0,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["0"],"Postman-Token":["a98d02dd-4463-441a-af58-859bc083f5cd"],"User-Agent":["PostmanRuntime/7.45.0"]},"request_body":{},"response_body":{"error":"Missing X-Api-Key"},"status_code":400,"duration_ms":599,"time":"2025-08-20T08:09:49+07:00","message":"HTTP request log"}
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:61583","request_uri":"/api/v1/users","content_length":0,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["0"],"Postman-Token":["4bdb6663-4fb8-4c5e-b98f-d36ba97d35e0"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{},"response_body":{"error":"Yêu cầu không hợp lệ "},"status_code":400,"duration_ms":0,"time":"2025-08-20T08:10:00+07:00","message":"HTTP request log"}
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:61583","request_uri":"/api/v1/users","content_length":10,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["10"],"Content-Type":["application/json"],"Postman-Token":["44dce8e3-bad6-44e1-b205-e679148416eb"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{},"response_body":{"error":{"Age":"Age là bắt buộc","Email":"Email là bắt buộc","Level":"Level là bắt buộc","Name":"Name là bắt buộc","Password":"Password là bắt buộc","Status":"Status là bắt buộc"}},"status_code":400,"duration_ms":1648,"time":"2025-08-20T08:10:13+07:00","message":"HTTP request log"}
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:55102","request_uri":"/api/v1/users","content_length":134,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["134"],"Content-Type":["application/json"],"Postman-Token":["6ab4fb6e-9e3d-4a16-983b-f253e36cbd52"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc@gmail.com","level":0,"name":"phuc","password":"121212","status":1},"response_body":{"error":{"Level":"Level là bắt buộc","Password":"Password phải lớn hơn 8 ký tự"}},"status_code":400,"duration_ms":0,"time":"2025-08-20T08:11:36+07:00","message":"HTTP request log"}
-{"level":"info","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:55102","request_uri":"/api/v1/users","content_length":136,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["136"],"Content-Type":["application/json"],"Postman-Token":["d72b0066-c3cf-4180-bff9-538899d22406"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc@gmail.com","level":2,"name":"phuc","password":"121gg212","status":1},"response_body":"","status_code":200,"duration_ms":611,"time":"2025-08-20T08:12:05+07:00","message":"HTTP request log"}
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53166","request_uri":"/api/v1/users","content_length":127,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["127"],"Content-Type":["application/json"],"Postman-Token":["78fa1b19-fe1d-4ee0-8747-418156b1c0ba"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc@gmail.com","level":2,"name":"phuc","password":1,"status":1},"response_body":{"error":"Yêu cầu không hợp lệ "},"status_code":400,"duration_ms":0,"time":"2025-08-20T08:13:29+07:00","message":"HTTP request log"}
-{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:52644","request_uri":"/api/v1/users","content_length":127,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["127"],"Content-Type":["application/json"],"Postman-Token":["494b2982-9cf9-4554-bfc1-86dcb60f24d1"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc@gmail.com","level":2,"name":"phuc","password":1,"status":1},"response_body":{"detail":"json: cannot unmarshal number into Go struct field User.password of type string","error":"Yêu cầu không hợp lệ "},"status_code":400,"duration_ms":651,"time":"2025-08-20T08:14:14+07:00","message":"HTTP request log"}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:61583",
+    "request_uri": "/api/v1/users",
+    "content_length": 0,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "0"
+        ],
+        "Postman-Token": [
+            "a98d02dd-4463-441a-af58-859bc083f5cd"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ]
+    },
+    "request_body": {},
+    "response_body": {
+        "error": "Missing X-Api-Key"
+    },
+    "status_code": 400,
+    "duration_ms": 599,
+    "time": "2025-08-20T08:09:49+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:61583",
+    "request_uri": "/api/v1/users",
+    "content_length": 0,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "0"
+        ],
+        "Postman-Token": [
+            "4bdb6663-4fb8-4c5e-b98f-d36ba97d35e0"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {},
+    "response_body": {
+        "error": "Yêu cầu không hợp lệ "
+    },
+    "status_code": 400,
+    "duration_ms": 0,
+    "time": "2025-08-20T08:10:00+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:61583",
+    "request_uri": "/api/v1/users",
+    "content_length": 10,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "10"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "44dce8e3-bad6-44e1-b205-e679148416eb"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {},
+    "response_body": {
+        "error": {
+            "Age": "Age là bắt buộc",
+            "Email": "Email là bắt buộc",
+            "Level": "Level là bắt buộc",
+            "Name": "Name là bắt buộc",
+            "Password": "Password là bắt buộc",
+            "Status": "Status là bắt buộc"
+        }
+    },
+    "status_code": 400,
+    "duration_ms": 1648,
+    "time": "2025-08-20T08:10:13+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:55102",
+    "request_uri": "/api/v1/users",
+    "content_length": 134,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "134"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "6ab4fb6e-9e3d-4a16-983b-f253e36cbd52"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 0,
+        "name": "phuc",
+        "password": "121212",
+        "status": 1
+    },
+    "response_body": {
+        "error": {
+            "Level": "Level là bắt buộc",
+            "Password": "Password phải lớn hơn 8 ký tự"
+        }
+    },
+    "status_code": 400,
+    "duration_ms": 0,
+    "time": "2025-08-20T08:11:36+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "info",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:55102",
+    "request_uri": "/api/v1/users",
+    "content_length": 136,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "136"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "d72b0066-c3cf-4180-bff9-538899d22406"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "121gg212",
+        "status": 1
+    },
+    "response_body": "",
+    "status_code": 200,
+    "duration_ms": 611,
+    "time": "2025-08-20T08:12:05+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:53166",
+    "request_uri": "/api/v1/users",
+    "content_length": 127,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "127"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "78fa1b19-fe1d-4ee0-8747-418156b1c0ba"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": 1,
+        "status": 1
+    },
+    "response_body": {
+        "error": "Yêu cầu không hợp lệ "
+    },
+    "status_code": 400,
+    "duration_ms": 0,
+    "time": "2025-08-20T08:13:29+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:52644",
+    "request_uri": "/api/v1/users",
+    "content_length": 127,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "127"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "494b2982-9cf9-4554-bfc1-86dcb60f24d1"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": 1,
+        "status": 1
+    },
+    "response_body": {
+        "detail": "json: cannot unmarshal number into Go struct field User.password of type string",
+        "error": "Yêu cầu không hợp lệ "
+    },
+    "status_code": 400,
+    "duration_ms": 651,
+    "time": "2025-08-20T08:14:14+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51603",
+    "request_uri": "/api/v1/users",
+    "content_length": 127,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "127"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "693c60d8-26c5-43bc-b01a-6242d5b93c42"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": 1,
+        "status": 1
+    },
+    "response_body": "{\"detail\":\"json: cannot unmarshal number into Go struct field User.password of type string\",\"error\":\"Yêu cầu không hợp lệ \"}{\"data\":{\"uuid\":\"7c9b1a18-a2a7-4a27-bc83-8ff49ee72dfa\",\"name\":\"phuc\",\"email\":\"phuc@gmail.com\",\"age\":17,\"password\":\"$2a$10$9yF/KPf6AIhIFZWE4HV5Weewlf/IvlFv/w.kBHeMfx17oqNQ6aQqO\",\"status\":1,\"level\":2},\"status\":\"success\"}",
+    "status_code": 400,
+    "duration_ms": 83243,
+    "time": "2025-08-21T08:59:38+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51603",
+    "request_uri": "/api/v1/users",
+    "content_length": 142,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "142"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "8cec1628-15d9-482c-a152-7b9fa2f6e022"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {},
+    "response_body": "{\"detail\":\"invalid character 's' looking for beginning of value\",\"error\":\"Yêu cầu không hợp lệ \"}{\"data\":{\"uuid\":\"b518d33d-5b5f-4242-a2de-2f011b297c31\",\"name\":\"\",\"email\":\"\",\"age\":0,\"password\":\"$2a$10$665vqoSfdWKcBN/gTW7vbuIdBGDrVaBsIkbcdoDwhqjLe56Xfgijq\",\"status\":0,\"level\":0},\"status\":\"success\"}",
+    "status_code": 400,
+    "duration_ms": 60357,
+    "time": "2025-08-21T08:59:52+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51603",
+    "request_uri": "/api/v1/users",
+    "content_length": 144,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "144"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "03ca4bea-cf51-4957-bb29-ec57526d97bb"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "sbdfjsdjfsdfjhsd",
+        "status": 1
+    },
+    "response_body": "{\"code\":\"CONFLICT\",\"error\":\"email already exist\"}{\"data\":{\"uuid\":\"7c9b1a18-a2a7-4a27-bc83-8ff49ee72dfa\",\"name\":\"phuc\",\"email\":\"phuc@gmail.com\",\"age\":17,\"password\":\"$2a$10$9yF/KPf6AIhIFZWE4HV5Weewlf/IvlFv/w.kBHeMfx17oqNQ6aQqO\",\"status\":1,\"level\":2},\"status\":\"success\"}",
+    "status_code": 409,
+    "duration_ms": 0,
+    "time": "2025-08-21T09:00:03+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "info",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51603",
+    "request_uri": "/api/v1/users",
+    "content_length": 153,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "153"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "4a651d56-d3c4-4111-bb88-90fcdd050af8"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc.enterdev@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "sbdfjsdjfsdfjhsd",
+        "status": 1
+    },
+    "response_body": {
+        "data": {
+            "age": 17,
+            "email": "phuc.enterdev@gmail.com",
+            "level": 2,
+            "name": "phuc",
+            "password": "$2a$10$uVOTuBeNPYFp461ugEMzmubVIRduyZGNLmX2DgTbpMy5oEUqb5TXe",
+            "status": 1,
+            "uuid": "3170861a-c269-4a11-b7cd-2fa09c878d47"
+        },
+        "status": "success"
+    },
+    "status_code": 201,
+    "duration_ms": 72968,
+    "time": "2025-08-21T09:00:09+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51603",
+    "request_uri": "/api/v1/users",
+    "content_length": 153,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "153"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "b021d29c-0a5e-4269-8b5d-f670061d5e62"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc.enterdev@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "sbdfjsdjfsdfjhsd",
+        "status": 1
+    },
+    "response_body": "{\"code\":\"CONFLICT\",\"error\":\"email already exist\"}{\"data\":{\"uuid\":\"3170861a-c269-4a11-b7cd-2fa09c878d47\",\"name\":\"phuc\",\"email\":\"phuc.enterdev@gmail.com\",\"age\":17,\"password\":\"$2a$10$uVOTuBeNPYFp461ugEMzmubVIRduyZGNLmX2DgTbpMy5oEUqb5TXe\",\"status\":1,\"level\":2},\"status\":\"success\"}",
+    "status_code": 409,
+    "duration_ms": 0,
+    "time": "2025-08-21T09:00:12+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "info",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51660",
+    "request_uri": "/api/v1/users",
+    "content_length": 153,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "153"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "a902bb80-1db1-4a70-abe9-a0c271e667b2"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc.enterdev@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "sbdfjsdjfsdfjhsd",
+        "status": 1
+    },
+    "response_body": {
+        "data": {
+            "age": 17,
+            "email": "phuc.enterdev@gmail.com",
+            "level": 2,
+            "name": "phuc",
+            "password": "$2a$10$gFljLYEIlIHjUsbnrbQNzuvhXZOYfRTW3py4nwrJEuNyI0Oeals9S",
+            "status": 1,
+            "uuid": "236ee90c-823d-4dec-99f3-da7e29efcb0d"
+        },
+        "status": "success"
+    },
+    "status_code": 201,
+    "duration_ms": 60229,
+    "time": "2025-08-21T09:00:37+07:00",
+    "message": "HTTP request log"
+}
+{
+    "level": "warn",
+    "method": "POST",
+    "path": "",
+    "query": "POST",
+    "client_ip": "::1",
+    "user_agent": "PostmanRuntime/7.45.0",
+    "referer": "",
+    "protocol": "HTTP/1.1",
+    "host": "localhost:8080",
+    "remote_addr": "[::1]:51660",
+    "request_uri": "/api/v1/users",
+    "content_length": 153,
+    "header": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Cache-Control": [
+            "no-cache"
+        ],
+        "Connection": [
+            "keep-alive"
+        ],
+        "Content-Length": [
+            "153"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Postman-Token": [
+            "e6ff619d-addd-49eb-a8ff-89084f2fe9c8"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.45.0"
+        ],
+        "X-Api-Key": [
+            "phuccongtu"
+        ]
+    },
+    "request_body": {
+        "age": 17,
+        "email": "phuc.enterdev@gmail.com",
+        "level": 2,
+        "name": "phuc",
+        "password": "sbdfjsdjfsdfjhsd",
+        "status": 1
+    },
+    "response_body": {
+        "code": "CONFLICT",
+        "error": "email already exist"
+    },
+    "status_code": 409,
+    "duration_ms": 0,
+    "time": "2025-08-21T09:00:39+07:00",
+    "message": "HTTP request log"
+}{"level":"info","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53570","request_uri":"/api/v1/users","content_length":154,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["154"],"Content-Type":["application/json"],"Postman-Token":["e6d9e955-9f4c-452d-9107-9ee2836045ba"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@hacker.com","level":2,"name":"phuc","password":"sbdfjsdjfsdfjhsd","status":1},"response_body":{"data":{"age":17,"email":"phuc.enterdev@hacker.com","full_name":"phuc","level":"Member","status":"Show","uuid":"450b96c9-ef6e-44c0-8d41-241e20cdaa56"},"status":"success"},"status_code":201,"duration_ms":79873,"time":"2025-08-21T14:31:40+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53570","request_uri":"/api/v1/users","content_length":153,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["153"],"Content-Type":["application/json"],"Postman-Token":["c025d320-93b9-4053-ba76-eece2694f5dc"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdevhacker.com","level":2,"name":"phuc","password":"sbdfjsdjfsdfjhsd","status":1},"response_body":{"error":{"Email":"Email không hợp lệ"}},"status_code":400,"duration_ms":2609,"time":"2025-08-21T14:32:37+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53570","request_uri":"/api/v1/users","content_length":154,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["154"],"Content-Type":["application/json"],"Postman-Token":["86a8788f-3035-4d57-8967-08bb31dfc05f"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@hacker.com","level":2,"name":"phuc","password":"sbdfjsdjfsdfjhsd","status":1},"response_body":{"code":"CONFLICT","error":"email already exist"},"status_code":409,"duration_ms":0,"time":"2025-08-21T14:32:42+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53666","request_uri":"/api/v1/users","content_length":154,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["154"],"Content-Type":["application/json"],"Postman-Token":["1c3e6ad6-03bb-4802-9a2f-ccc10b1f302e"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@hacker.com","level":2,"name":"phuc","password":"sbdfjsdjfsdfjhsd","status":1},"response_body":{"error":{"Email":"Email này nằm trong danh sách bị cấm"}},"status_code":400,"duration_ms":1039,"time":"2025-08-21T14:39:10+07:00","message":"HTTP request log"}
+{"level":"info","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:53666","request_uri":"/api/v1/users","content_length":153,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["153"],"Content-Type":["application/json"],"Postman-Token":["96cd3d88-cc4a-44c0-ac17-ece51a0eeb68"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"sbdfjsdjfsdfjhsd","status":1},"response_body":{"data":{"age":17,"email":"phuc.enterdev@gmail.com","full_name":"phuc","level":"Member","status":"Show","uuid":"abd0361e-11fe-4183-b7ef-4f5d0f9aef2f"},"status":"success"},"status_code":201,"duration_ms":61004,"time":"2025-08-21T14:39:21+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51505","request_uri":"/api/v1/users","content_length":145,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["145"],"Content-Type":["application/json"],"Postman-Token":["12a03889-85e7-40f1-a099-e192b9f4e608"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"12345678","status":1},"response_body":{"error":{}},"status_code":400,"duration_ms":1312,"time":"2025-08-21T14:44:41+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51532","request_uri":"/api/v1/users","content_length":145,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["145"],"Content-Type":["application/json"],"Postman-Token":["d034047f-9463-49fe-b387-9cbec05d3384"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"12345678","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":1138,"time":"2025-08-21T14:46:21+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51532","request_uri":"/api/v1/users","content_length":148,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["148"],"Content-Type":["application/json"],"Postman-Token":["aecc240f-f085-4bfa-9644-dd6a80ada58d"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"12345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":0,"time":"2025-08-21T14:47:11+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51532","request_uri":"/api/v1/users","content_length":148,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["148"],"Content-Type":["application/json"],"Postman-Token":["967c457c-d93c-4459-9408-3c423b6cb2d0"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A2345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":0,"time":"2025-08-21T14:47:27+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51573","request_uri":"/api/v1/users","content_length":148,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["148"],"Content-Type":["application/json"],"Postman-Token":["d502f8f9-fc72-4b70-829e-cf2abdf00690"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A2345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":1786,"time":"2025-08-21T14:47:55+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:51590","request_uri":"/api/v1/users","content_length":148,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["148"],"Content-Type":["application/json"],"Postman-Token":["d501700f-a0e3-4a03-b6a2-5ed560a119b9"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A2345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":2096,"time":"2025-08-21T14:48:39+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:57972","request_uri":"/api/v1/users","content_length":148,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["148"],"Content-Type":["application/json"],"Postman-Token":["8ed84009-2956-458a-ac32-cfda62848f44"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A2345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":1777,"time":"2025-08-21T14:50:25+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:57972","request_uri":"/api/v1/users","content_length":156,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["156"],"Content-Type":["application/json"],"Postman-Token":["bd154ba5-b9e1-443e-901c-642e7a7a6188"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A#bcasajs2345678Ab@","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":0,"time":"2025-08-21T14:50:34+07:00","message":"HTTP request log"}
+{"level":"info","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:57998","request_uri":"/api/v1/users","content_length":156,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["156"],"Content-Type":["application/json"],"Postman-Token":["dc130851-3240-41d8-8585-2d4874482753"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"A#bcasajs2345678Ab@","status":1},"response_body":{"data":{"age":17,"email":"phuc.enterdev@gmail.com","full_name":"phuc","level":"Member","status":"Show","uuid":"be9aa5ee-9894-47e9-95b7-9ac684b8bb66"},"status":"success"},"status_code":201,"duration_ms":59682,"time":"2025-08-21T14:51:30+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:57998","request_uri":"/api/v1/users","content_length":152,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["152"],"Content-Type":["application/json"],"Postman-Token":["2a623cd0-3809-49fb-bd21-0420e74fe491"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"asjhsadfi!87834","status":1},"response_body":{"error":{"Password":"Password này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)"}},"status_code":400,"duration_ms":506,"time":"2025-08-21T14:51:39+07:00","message":"HTTP request log"}
+{"level":"warn","method":"POST","path":"","query":"POST","client_ip":"::1","user_agent":"PostmanRuntime/7.45.0","referer":"","protocol":"HTTP/1.1","host":"localhost:8080","remote_addr":"[::1]:57998","request_uri":"/api/v1/users","content_length":153,"header":{"Accept":["*/*"],"Accept-Encoding":["gzip, deflate, br"],"Cache-Control":["no-cache"],"Connection":["keep-alive"],"Content-Length":["153"],"Content-Type":["application/json"],"Postman-Token":["e859cf6d-48c8-4b69-a42d-00d1af0f921f"],"User-Agent":["PostmanRuntime/7.45.0"],"X-Api-Key":["phuccongtu"]},"request_body":{"age":17,"email":"phuc.enterdev@gmail.com","level":2,"name":"phuc","password":"asjhsadfi!878A34","status":1},"response_body":{"code":"CONFLICT","error":"email already exist"},"status_code":409,"duration_ms":0,"time":"2025-08-21T14:51:42+07:00","message":"HTTP request log"}
