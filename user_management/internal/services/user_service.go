@@ -1,8 +1,6 @@
 package services
 
 import (
-	"log"
-
 	"enterdev.com.vn/user_management/internal/models"
 	"enterdev.com.vn/user_management/internal/repository"
 	"enterdev.com.vn/user_management/internal/utils"
@@ -22,9 +20,12 @@ func NewUserServiceImpl(repo repository.UserRepository) UserService {
 	}
 }
 
-func (us *UserServiceImpl) GetAllUser() {
-	us.repo.FindAll()
-	log.Println("GetAllUser into UserServiceImpl")
+func (us *UserServiceImpl) GetAllUser() ([]models.User, error) {
+	users, err := us.repo.FindAll()
+	if err != nil {
+		return nil, utils.WrapError(err, "failed to fetch users", utils.ErrCodeInternal)
+	}
+	return users, nil
 }
 
 func (us *UserServiceImpl) CreateUser(user models.User) (models.User, error) {
@@ -44,8 +45,12 @@ func (us *UserServiceImpl) CreateUser(user models.User) (models.User, error) {
 	return user, nil
 }
 
-func (us *UserServiceImpl) GetUserByUUID() {
-
+func (us *UserServiceImpl) GetUserByUUID(uuid string) (models.User, error) {
+	user, found := us.repo.FindByUUID(uuid)
+	if !found {
+		return models.User{}, utils.NewError("user not found", utils.ErrCodeNotFound)
+	}
+	return user, nil
 }
 
 func (us *UserServiceImpl) UpdateUser() {

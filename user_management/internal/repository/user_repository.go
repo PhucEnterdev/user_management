@@ -1,8 +1,6 @@
 package repository
 
 import (
-	"log"
-
 	"enterdev.com.vn/user_management/internal/models"
 )
 
@@ -18,8 +16,8 @@ func NewInMemoryUserRepositoryImpe() UserRepository {
 	}
 }
 
-func (ur *InMemoryUserRepositoryImpl) FindAll() {
-	log.Println("GetAllUser into InMemoryUserRepository")
+func (ur *InMemoryUserRepositoryImpl) FindAll() ([]models.User, error) {
+	return ur.users, nil
 }
 
 func (ur *InMemoryUserRepositoryImpl) Create(user models.User) error {
@@ -27,8 +25,14 @@ func (ur *InMemoryUserRepositoryImpl) Create(user models.User) error {
 	return nil
 }
 
-func (ur *InMemoryUserRepositoryImpl) FindByUUID() {
+func (ur *InMemoryUserRepositoryImpl) FindByUUID(uuid string) (models.User, bool) {
+	for _, user := range ur.users {
+		if user.UUID == uuid {
+			return user, true
+		}
+	}
 
+	return models.User{}, false
 }
 
 func (ur *InMemoryUserRepositoryImpl) Update() {
