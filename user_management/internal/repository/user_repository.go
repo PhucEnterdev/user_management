@@ -1,6 +1,8 @@
 package repository
 
 import (
+	"fmt"
+
 	"enterdev.com.vn/user_management/internal/models"
 )
 
@@ -35,8 +37,14 @@ func (ur *InMemoryUserRepositoryImpl) FindByUUID(uuid string) (models.User, bool
 	return models.User{}, false
 }
 
-func (ur *InMemoryUserRepositoryImpl) Update() {
-
+func (ur *InMemoryUserRepositoryImpl) Update(uuid string, user models.User) error {
+	for index, u := range ur.users {
+		if u.UUID == uuid {
+			ur.users[index] = user
+			return nil
+		}
+	}
+	return fmt.Errorf("user not found")
 }
 
 func (ur *InMemoryUserRepositoryImpl) Delete() {

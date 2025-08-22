@@ -1,6 +1,9 @@
 package services
 
 import (
+	"log"
+	"strings"
+
 	"enterdev.com.vn/user_management/internal/models"
 	"enterdev.com.vn/user_management/internal/repository"
 	"enterdev.com.vn/user_management/internal/utils"
@@ -20,12 +23,35 @@ func NewUserServiceImpl(repo repository.UserRepository) UserService {
 	}
 }
 
-func (us *UserServiceImpl) GetAllUser() ([]models.User, error) {
+func (us *UserServiceImpl) GetAllUser(search string, page int, limit int) ([]models.User, error) {
 	users, err := us.repo.FindAll()
 	if err != nil {
 		return nil, utils.WrapError(err, "failed to fetch users", utils.ErrCodeInternal)
 	}
-	return users, nil
+	var filteredUsers []models.User
+	log.Println(search)
+	if search == "" {
+		filteredUsers = users
+	} else {
+		search = strings.ToLower(search)
+		for _, user := range users {
+			name := strings.ToLower(user.Name)
+			email := strings.ToLower(user.Email)
+			if strings.Contains(name, search) || strings.Contains(email, search) {
+				filteredUsers = append(filteredUsers, user)
+			}
+		}
+	}
+
+	start := (page - 1) * limit
+	if start >= len(filteredUsers) {
+		return []models.User{}, nil
+	}
+	end := start + limit
+	if end > len(filteredUsers) {
+		end = len(filteredUsers)
+	}
+	return filteredUsers[start:end], nil
 }
 
 func (us *UserServiceImpl) CreateUser(user models.User) (models.User, error) {
@@ -53,8 +79,33 @@ func (us *UserServiceImpl) GetUserByUUID(uuid string) (models.User, error) {
 	return user, nil
 }
 
-func (us *UserServiceImpl) UpdateUser() {
+func (us *UserServiceImpl) UpdateUser(uuid string, user models.User) (models.User, error) {
+	user.Email = utils.NormalizeString(user.Email)
+	if u, exist := us.repo.FindByEmail(user.Email); exist && u.UUID != uuid {
+		return models.User{}, utils.NewError("email already exist", utils.ErrCodeConflict)
+	}
+	currentUser, found := us.repo.FindByUUID(uuid)
+	if !found {
+		return models.User{}, utils.NewError("user not found", utils.ErrCodeNotFound)
+	}
+	currentUser.Name = user.Name
+	currentUser.Age = user.Age
+	currentUser.Email = user.Email
+	currentUser.Status = user.Status
+	currentUser.Level = user.Level
+	if user.Password != "" {
+		hashedPass, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+		if err != nil {
+			return models.User{}, utils.WrapError(err, "failed to hash password", utils.ErrCodeInternal)
+		}
+		currentUser.Password = string(hashedPass)
+	}
 
+	// update data
+	if err := us.repo.Update(uuid, currentUser); err != nil {
+		return models.User{}, utils.WrapError(err, "failed to update user", utils.ErrCodeInternal)
+	}
+	return currentUser, nil
 }
 
 func (us *UserServiceImpl) DeleteUser() {

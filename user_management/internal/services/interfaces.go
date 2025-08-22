@@ -5,9 +5,9 @@ import (
 )
 
 type UserService interface {
-	GetAllUser() ([]models.User, error)
+	GetAllUser(search string, page int, limit int) ([]models.User, error)
 	CreateUser(user models.User) (models.User, error)
 	GetUserByUUID(uuid string) (models.User, error)
-	UpdateUser()
+	UpdateUser(uuid string, user models.User) (models.User, error)
 	DeleteUser()
 }
