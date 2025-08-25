@@ -15,44 +15,47 @@ const (
 	ErrCodeInternal   ErrorCode = "INTERNAL_SERVER_ERROR"
 )
 
-type AppErrror struct {
+type AppError struct {
 	Message string
 	Code    ErrorCode
 	Err     error
 }
 
-func (ae *AppErrror) Error() string {
+func (ae *AppError) Error() string {
 	return ""
 }
 
 func NewError(message string, code ErrorCode) error {
-	return &AppErrror{
+	return &AppError{
 		Message: message,
 		Code:    code,
 	}
 }
 
-func WrapError(err error, msg string, code ErrorCode) error {
-	return &AppErrror{
+func WrapError(err error, message string, code ErrorCode) error {
+	return &AppError{
 		Err:     err,
-		Message: msg,
+		Message: message,
 		Code:    code,
 	}
 }
 
 func ResponseError(ctx *gin.Context, err error) {
-	if appError, ok := err.(*AppErrror); ok {
-		statusCode := httpStatusFormCode(appError.Code)
+	if appErr, ok := err.(*AppError); ok {
+		status := httpStatusFromCode(appErr.Code)
 		response := gin.H{
-			"error": appError.Message,
-			"code":  appError.Code,
+			"error": appErr.Message,
+			"code":  appErr.Code,
 		}
-		if appError.Err != nil {
-			response["detail"] = appError.Err.Error()
+
+		if appErr.Err != nil {
+			response["detail"] = appErr.Err.Error()
 		}
-		ctx.JSON(statusCode, response)
+
+		ctx.JSON(status, response)
 		return
 	}
+
 	ctx.JSON(http.StatusInternalServerError, gin.H{
 		"error": err.Error(),
 		"code":  ErrCodeInternal,
@@ -66,11 +69,15 @@ func ResponseSuccess(ctx *gin.Context, status int, data any) {
 	})
 }
 
+func ResponseStatusCode(ctx *gin.Context, status int) {
+	ctx.Status(status)
+}
+
 func ResponseValidator(ctx *gin.Context, data any) {
 	ctx.JSON(http.StatusBadRequest, data)
 }
 
-func httpStatusFormCode(code ErrorCode) int {
+func httpStatusFromCode(code ErrorCode) int {
 	switch code {
 	case ErrCodeBadRequest:
 		return http.StatusBadRequest

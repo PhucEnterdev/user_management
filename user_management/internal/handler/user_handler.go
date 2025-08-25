@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"enterdev.com.vn/user_management/internal/dto"
-	"enterdev.com.vn/user_management/internal/models"
 	"enterdev.com.vn/user_management/internal/services"
 	"enterdev.com.vn/user_management/internal/utils"
 	"enterdev.com.vn/user_management/internal/validation"
@@ -46,7 +45,7 @@ func (uh *UserHandler) GetAllUser(ctx *gin.Context) {
 
 	users, err := uh.service.GetAllUser(params.Search, params.Page, params.Limit)
 	if err != nil {
-		ctx.JSON(http.StatusBadRequest, validation.HandlerValidationError(err))
+		ctx.JSON(http.StatusBadRequest, validation.HandleValidationErrors(err))
 		return
 	}
 
@@ -56,11 +55,12 @@ func (uh *UserHandler) GetAllUser(ctx *gin.Context) {
 }
 
 func (uh *UserHandler) CreateUser(ctx *gin.Context) {
-	var user models.User
-	if err := ctx.ShouldBindJSON(&user); err != nil {
+	var input dto.CreateUserInput
+	if err := ctx.ShouldBindJSON(&input); err != nil {
 		utils.ResponseValidator(ctx, err)
 		return
 	}
+	user := input.MapCreateInputToModel()
 	createdUser, err := uh.service.CreateUser(user)
 	if err != nil {
 		utils.ResponseError(ctx, err)
@@ -94,11 +94,12 @@ func (uh *UserHandler) UpdateUser(ctx *gin.Context) {
 		utils.ResponseError(ctx, err)
 		return
 	}
-	var user models.User
-	if err := ctx.ShouldBindJSON(&user); err != nil {
+	var input dto.UpdateUserInput
+	if err := ctx.ShouldBindJSON(&input); err != nil {
 		utils.ResponseValidator(ctx, err)
 		return
 	}
+	user := input.MapUpdateInputToModel()
 	updatedUser, err := uh.service.UpdateUser(params.UUID, user)
 	if err != nil {
 		utils.ResponseError(ctx, err)
@@ -109,5 +110,16 @@ func (uh *UserHandler) UpdateUser(ctx *gin.Context) {
 }
 
 func (uh *UserHandler) DeleteUser(ctx *gin.Context) {
+	var params GetUserByUUIDParam
+	if err := ctx.ShouldBindUri(&params); err != nil {
+		utils.ResponseError(ctx, err)
+		return
+	}
 
+	if err := uh.service.DeleteUser(params.UUID); err != nil {
+		utils.ResponseError(ctx, err)
+		return
+	}
+
+	utils.ResponseStatusCode(ctx, http.StatusNoContent)
 }

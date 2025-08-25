@@ -22,6 +22,6 @@ func (ur *UserRoute) Register(r *gin.RouterGroup) {
 		users.POST("", ur.handler.CreateUser)
 		users.GET("/:uuid", ur.handler.GetUserByUUID)
 		users.PUT("/:uuid", ur.handler.UpdateUser)
-		users.DELETE("", ur.handler.DeleteUser)
+		users.DELETE("/:uuid", ur.handler.DeleteUser)
 	}
 }

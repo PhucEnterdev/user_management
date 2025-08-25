@@ -22,7 +22,7 @@ type Application struct {
 
 func NewApplication(cfg *config.Config) *Application {
 
-	if err := validation.InitValidation(); err != nil {
+	if err := validation.InitValidator(); err != nil {
 		log.Fatalf("validator init failed %v", err)
 	}
 

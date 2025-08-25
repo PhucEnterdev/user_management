@@ -90,7 +90,9 @@ func (us *UserServiceImpl) UpdateUser(uuid string, user models.User) (models.Use
 	}
 	currentUser.Name = user.Name
 	currentUser.Age = user.Age
-	currentUser.Email = user.Email
+	if user.Email != "" {
+		currentUser.Email = user.Email
+	}
 	currentUser.Status = user.Status
 	currentUser.Level = user.Level
 	if user.Password != "" {
@@ -108,6 +110,9 @@ func (us *UserServiceImpl) UpdateUser(uuid string, user models.User) (models.Use
 	return currentUser, nil
 }
 
-func (us *UserServiceImpl) DeleteUser() {
-
+func (us *UserServiceImpl) DeleteUser(uuid string) error {
+	if err := us.repo.Delete(uuid); err != nil {
+		return utils.NewError("user not found", utils.ErrCodeNotFound)
+	}
+	return nil
 }

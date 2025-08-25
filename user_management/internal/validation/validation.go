@@ -2,7 +2,6 @@ package validation
 
 import (
 	"fmt"
-	"log"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -10,72 +9,77 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func InitValidation() error {
+func InitValidator() error {
 	v, ok := binding.Validator.Engine().(*validator.Validate)
 	if !ok {
 		return fmt.Errorf("failed to get validator engine")
 	}
+
 	RegisterCustomValidation(v)
 	return nil
 }
 
-/** function này custom lỗi trả về cho endpoint */
-func HandlerValidationError(err error) gin.H {
+func HandleValidationErrors(err error) gin.H {
 	if validationError, ok := err.(validator.ValidationErrors); ok {
 		errors := make(map[string]string)
-		for _, e := range validationError {
 
-			log.Printf("%+v", e.Error())
-			log.Printf("%+v", e.Field())
-			log.Printf("%+v", e.Tag())
+		for _, e := range validationError {
+			root := strings.Split(e.Namespace(), ".")[0]
+
+			rawPath := strings.TrimPrefix(e.Namespace(), root+".")
+
+			parts := strings.Split(rawPath, ".")
+
+			fieldPath := strings.Join(parts, ".")
 
 			switch e.Tag() {
 			case "gt":
-				errors[e.Field()] = fmt.Sprintf("%s phải lớn hơn %s", e.Field(), e.Param())
-			case "gte":
-				errors[e.Field()] = fmt.Sprintf("%s phải lớn hơn hoặc bằng %s ", e.Field(), e.Param())
-			case "lte":
-				errors[e.Field()] = fmt.Sprintf("%s phải bé hơn hoặc bằng %s", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải lớn hơn %s", fieldPath, e.Param())
 			case "lt":
-				errors[e.Field()] = fmt.Sprintf("%s phải bé hơn %s", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải nhỏ hơn %s", fieldPath, e.Param())
+			case "gte":
+				errors[fieldPath] = fmt.Sprintf("%s phải lớn hơn hoặc bằng %s", fieldPath, e.Param())
+			case "lte":
+				errors[fieldPath] = fmt.Sprintf("%s phải nhỏ hơn hoặc bằng %s", fieldPath, e.Param())
 			case "uuid":
-				errors[e.Field()] = fmt.Sprintf("%s không hợp lệ", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s phải là UUID hợp lệ", fieldPath)
 			case "slug":
-				errors[e.Field()] = fmt.Sprintf("%s chỉ được chứa chữ thường, dấu gạch nối hoặc dấu chấm", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s chỉ được chứa chữ thường, số, dấu gạch ngang hoặc dấu chấm", fieldPath)
 			case "min":
-				errors[e.Field()] = fmt.Sprintf("%s phải lớn hơn %s ký tự", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải nhiều hơn %s ký tự", fieldPath, e.Param())
 			case "max":
-				errors[e.Field()] = fmt.Sprintf("%s phải ít hơn %s ký tự", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải ít hơn %s ký tự", fieldPath, e.Param())
 			case "min_int":
-				errors[e.Field()] = fmt.Sprintf("%s phải có giá trị lớn hơn %s", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải có giá trị lớn hơn %s", fieldPath, e.Param())
 			case "max_int":
-				errors[e.Field()] = fmt.Sprintf("%s phải có gí trị nhỏ hơn %s", e.Field(), e.Param())
+				errors[fieldPath] = fmt.Sprintf("%s phải có giá trị bé hơn %s", fieldPath, e.Param())
 			case "oneof":
-				allowedValues := strings.Join(strings.Split(e.Param(), " "), ", ")
-				errors[e.Field()] = fmt.Sprintf("%s phải là 1 trong các giá trị %s", e.Field(), allowedValues)
+				allowedValues := strings.Join(strings.Split(e.Param(), " "), ",")
+				errors[fieldPath] = fmt.Sprintf("%s phải là một trong các giá trị: %s", fieldPath, allowedValues)
 			case "required":
-				errors[e.Field()] = fmt.Sprintf("%s là bắt buộc", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s là bắt buộc", fieldPath)
 			case "search":
-				errors[e.Field()] = fmt.Sprintf("%s là chữ cái, số và khoảng trắng", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s chỉ được chứa chữ thường, in hoa, số và khoảng trắng", fieldPath)
 			case "email":
-				errors[e.Field()] = fmt.Sprintf("%s không hợp lệ", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s phải đúng định dạng là email", fieldPath)
 			case "datetime":
-				errors[e.Field()] = fmt.Sprintf("%s phải theo định dạng dd-mm-yyyy", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s phải theo đúng định dạng YYYY-MM-DD", fieldPath)
 			case "email_advanced":
-				errors[e.Field()] = fmt.Sprintf("%s này nằm trong danh sách bị cấm", e.Field())
+				errors[fieldPath] = fmt.Sprintf("%s này trong danh sách bị cấm", fieldPath)
 			case "password_strong":
-				errors[e.Field()] = fmt.Sprintf("%s này chưa đủ mạnh (từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt)", e.Field())
-			case "file_extension":
-				allowedValues := strings.Join(strings.Split(e.Param(), " "), ", ")
-				errors[e.Field()] = fmt.Sprintf("%s chỉ cho phép những đuôi file %s", e.Field(), allowedValues)
+				errors[fieldPath] = fmt.Sprintf("%s phải ít nhất 8 ký tự bao gồm (chữ thường, chữ in hoa, số và ký tự đặc biệt)", fieldPath)
+			case "file_ext":
+				allowedValues := strings.Join(strings.Split(e.Param(), " "), ",")
+				errors[fieldPath] = fmt.Sprintf("%s chỉ cho phép những file có extension: %s", fieldPath, allowedValues)
 			}
 		}
-		return gin.H{
-			"error": errors,
-		}
+
+		return gin.H{"error": errors}
+
 	}
+
 	return gin.H{
-		"error":  "Yêu cầu không hợp lệ ",
+		"error":  "Yêu cầu không hợp lệ",
 		"detail": err.Error(),
 	}
 }

@@ -14,10 +14,8 @@ func RegisterCustomValidation(v *validator.Validate) {
 	var blockedDomains = map[string]bool{
 		"blacklist.com": true,
 		"edu.vn":        true,
-		"hacker.com":    true,
+		"abc.com":       true,
 	}
-
-	// block email không được phép đăng ký
 	v.RegisterValidation("email_advanced", func(fl validator.FieldLevel) bool {
 		email := fl.Field().String()
 
@@ -27,10 +25,10 @@ func RegisterCustomValidation(v *validator.Validate) {
 		}
 
 		domain := utils.NormalizeString(parts[1])
+
 		return !blockedDomains[domain]
 	})
 
-	// đặt password mạnh
 	v.RegisterValidation("password_strong", func(fl validator.FieldLevel) bool {
 		password := fl.Field().String()
 
@@ -58,48 +56,41 @@ func RegisterCustomValidation(v *validator.Validate) {
 
 	v.RegisterValidation("min_int", func(fl validator.FieldLevel) bool {
 		minStr := fl.Param()
-		// Base
-		// 10: hệ thập phân (decimal)
-		// 16: hệ thập lục phân (hex, ví dụ: "FF" => 255)
-		// 2: hệ nhị phân (binary)
-		// 64 ở đây là 64 bit
-		minValue, err := strconv.ParseInt(minStr, 10, 64)
+		minVal, err := strconv.ParseInt(minStr, 10, 64)
 		if err != nil {
 			return false
 		}
-		return fl.Field().Int() >= minValue
+
+		return fl.Field().Int() >= minVal
 	})
 
 	v.RegisterValidation("max_int", func(fl validator.FieldLevel) bool {
 		maxStr := fl.Param()
-		// Base
-		// 10: hệ thập phân (decimal)
-		// 16: hệ thập lục phân (hex, ví dụ: "FF" => 255)
-		// 2: hệ nhị phân (binary)
-		// 64 ở đây là 64 bit
-		maxValue, err := strconv.ParseInt(maxStr, 10, 64)
+		maxVal, err := strconv.ParseInt(maxStr, 10, 64)
 		if err != nil {
 			return false
 		}
-		return fl.Field().Int() >= maxValue
+
+		return fl.Field().Int() <= maxVal
 	})
 
-	/** Kiểm tra các đuôi file nào được phép gửi lên server*/
-	v.RegisterValidation("file_extension", func(fl validator.FieldLevel) bool {
-		fileName := fl.Field().String()
+	v.RegisterValidation("file_ext", func(fl validator.FieldLevel) bool {
+		filename := fl.Field().String()
+
 		allowedStr := fl.Param()
 		if allowedStr == "" {
 			return false
 		}
-		/** Cắt chuỗi thành mảng các field là các đuôi file được phép gửi*/
-		allowedExtension := strings.Fields(allowedStr)
-		ext := strings.TrimPrefix(strings.ToLower(filepath.Ext(fileName)), ".")
 
-		for _, allowed := range allowedExtension {
+		allowedExt := strings.Fields(allowedStr)
+		ext := strings.TrimPrefix(strings.ToLower(filepath.Ext(filename)), ".")
+
+		for _, allowed := range allowedExt {
 			if ext == strings.ToLower(allowed) {
 				return true
 			}
 		}
+
 		return false
 	})
 }
